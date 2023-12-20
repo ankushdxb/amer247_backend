@@ -676,6 +676,128 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiAmerServiceAmerService extends Schema.CollectionType {
+  collectionName: 'amer_services';
+  info: {
+    singularName: 'amer-service';
+    pluralName: 'amer-services';
+    displayName: 'amerService';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    serviceName: Attribute.String;
+    applicantName: Attribute.String;
+    sponsorName: Attribute.String;
+    sponsorEmail: Attribute.String;
+    sponsorMobileNo: Attribute.String;
+    whatAppNo: Attribute.String;
+    acount_IBAN_No: Attribute.String;
+    applicationPriority: Attribute.String;
+    insideOrOutside: Attribute.String;
+    requiredDocument: Attribute.Media;
+    address: Attribute.Text;
+    comment: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::amer-service.amer-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::amer-service.amer-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEmirateIdEmirateId extends Schema.CollectionType {
+  collectionName: 'emirate_ids';
+  info: {
+    singularName: 'emirate-id';
+    pluralName: 'emirate-ids';
+    displayName: 'emirateID';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    serviceName: Attribute.String;
+    applicantName: Attribute.String;
+    sponsorName: Attribute.String;
+    sponsorEmail: Attribute.Email;
+    sponsorMobileNo: Attribute.String;
+    whatappNo: Attribute.String;
+    emirates: Attribute.String;
+    P0_Box_No: Attribute.String;
+    UID_No: Attribute.String;
+    requiredDocment: Attribute.Media;
+    address: Attribute.Text;
+    comment: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::emirate-id.emirate-id',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::emirate-id.emirate-id',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiGoldenVisaGoldenVisa extends Schema.CollectionType {
+  collectionName: 'golden_visas';
+  info: {
+    singularName: 'golden-visa';
+    pluralName: 'golden-visas';
+    displayName: 'goldenVisa';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    serviceName: Attribute.String;
+    applicantName: Attribute.String;
+    email: Attribute.Media;
+    whatappNo: Attribute.String;
+    account_IBAN_No: Attribute.String;
+    applicationStatus: Attribute.String;
+    passport_of_applicant: Attribute.Media;
+    visa_Copy_of_Applicant: Attribute.Media;
+    emirates_id_copy_of_applicant: Attribute.Media;
+    photo_of_applicant: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::golden-visa.golden-visa',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::golden-visa.golden-visa',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Shared {
     export interface ContentTypes {
@@ -692,6 +814,9 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::amer-service.amer-service': ApiAmerServiceAmerService;
+      'api::emirate-id.emirate-id': ApiEmirateIdEmirateId;
+      'api::golden-visa.golden-visa': ApiGoldenVisaGoldenVisa;
     }
   }
 }

@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "emirate_ids",
+  "info": {
+    "singularName": "emirate-id",
+    "pluralName": "emirate-ids",
+    "displayName": "emirateID"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "serviceName": {
+      "type": "string"
+    },
+    "applicantName": {
+      "type": "string"
+    },
+    "sponsorName": {
+      "type": "string"
+    },
+    "sponsorEmail": {
+      "type": "email"
+    },
+    "sponsorMobileNo": {
+      "type": "string"
+    },
+    "whatappNo": {
+      "type": "string"
+    },
+    "emirates": {
+      "type": "string"
+    },
+    "P0_Box_No": {
+      "type": "string"
+    },
+    "UID_No": {
+      "type": "string"
+    },
+    "requiredDocment": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "address": {
+      "type": "text"
+    },
+    "comment": {
+      "type": "string"
+    }
+  }
+}

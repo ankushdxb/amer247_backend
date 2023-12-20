@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "amer_services",
+  "info": {
+    "singularName": "amer-service",
+    "pluralName": "amer-services",
+    "displayName": "amerService",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "serviceName": {
+      "type": "string"
+    },
+    "applicantName": {
+      "type": "string"
+    },
+    "sponsorName": {
+      "type": "string"
+    },
+    "sponsorEmail": {
+      "type": "string"
+    },
+    "sponsorMobileNo": {
+      "type": "string"
+    },
+    "whatAppNo": {
+      "type": "string"
+    },
+    "acount_IBAN_No": {
+      "type": "string"
+    },
+    "applicationPriority": {
+      "type": "string"
+    },
+    "insideOrOutside": {
+      "type": "string"
+    },
+    "requiredDocument": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "address": {
+      "type": "text"
+    },
+    "comment": {
+      "type": "text"
+    }
+  }
+}
