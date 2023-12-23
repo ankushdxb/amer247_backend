@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "adults",
+  "info": {
+    "singularName": "adult",
+    "pluralName": "adults",
+    "displayName": "Adult"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "dateOfBirth": {
+      "type": "string"
+    },
+    "tourist_visa": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tourist-visa.tourist-visa",
+      "inversedBy": "adults"
+    }
+  }
+}

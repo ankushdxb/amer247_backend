@@ -676,6 +676,42 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiAdultAdult extends Schema.CollectionType {
+  collectionName: 'adults';
+  info: {
+    singularName: 'adult';
+    pluralName: 'adults';
+    displayName: 'Adult';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    dateOfBirth: Attribute.String;
+    tourist_visa: Attribute.Relation<
+      'api::adult.adult',
+      'manyToOne',
+      'api::tourist-visa.tourist-visa'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::adult.adult',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::adult.adult',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiAmerServiceAmerService extends Schema.CollectionType {
   collectionName: 'amer_services';
   info: {
@@ -711,6 +747,42 @@ export interface ApiAmerServiceAmerService extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::amer-service.amer-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiChildChild extends Schema.CollectionType {
+  collectionName: 'children';
+  info: {
+    singularName: 'child';
+    pluralName: 'children';
+    displayName: 'Child';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    dateOfBirth: Attribute.String;
+    tourist_visa: Attribute.Relation<
+      'api::child.child',
+      'manyToOne',
+      'api::tourist-visa.tourist-visa'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::child.child',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::child.child',
       'oneToOne',
       'admin::user'
     > &
@@ -765,6 +837,7 @@ export interface ApiGoldenVisaGoldenVisa extends Schema.CollectionType {
     singularName: 'golden-visa';
     pluralName: 'golden-visas';
     displayName: 'goldenVisa';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -798,6 +871,53 @@ export interface ApiGoldenVisaGoldenVisa extends Schema.CollectionType {
   };
 }
 
+export interface ApiTouristVisaTouristVisa extends Schema.CollectionType {
+  collectionName: 'tourist_visas';
+  info: {
+    singularName: 'tourist-visa';
+    pluralName: 'tourist-visas';
+    displayName: 'TouristVisa';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    applicantName: Attribute.String;
+    email: Attribute.String;
+    mobileNo: Attribute.String;
+    nationality: Attribute.String;
+    dateOfTravel: Attribute.String;
+    passportCopies: Attribute.Media;
+    photosOfPassenger: Attribute.Media;
+    adults: Attribute.Relation<
+      'api::tourist-visa.tourist-visa',
+      'oneToMany',
+      'api::adult.adult'
+    >;
+    children: Attribute.Relation<
+      'api::tourist-visa.tourist-visa',
+      'oneToMany',
+      'api::child.child'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::tourist-visa.tourist-visa',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::tourist-visa.tourist-visa',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Shared {
     export interface ContentTypes {
@@ -814,9 +934,12 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::adult.adult': ApiAdultAdult;
       'api::amer-service.amer-service': ApiAmerServiceAmerService;
+      'api::child.child': ApiChildChild;
       'api::emirate-id.emirate-id': ApiEmirateIdEmirateId;
       'api::golden-visa.golden-visa': ApiGoldenVisaGoldenVisa;
+      'api::tourist-visa.tourist-visa': ApiTouristVisaTouristVisa;
     }
   }
 }

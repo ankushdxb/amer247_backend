@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tourist_visas",
+  "info": {
+    "singularName": "tourist-visa",
+    "pluralName": "tourist-visas",
+    "displayName": "TouristVisa",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "applicantName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "mobileNo": {
+      "type": "string"
+    },
+    "nationality": {
+      "type": "string"
+    },
+    "dateOfTravel": {
+      "type": "string"
+    },
+    "passportCopies": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "photosOfPassenger": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "adults": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::adult.adult",
+      "mappedBy": "tourist_visa"
+    },
+    "children": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::child.child",
+      "mappedBy": "tourist_visa"
+    }
+  }
+}

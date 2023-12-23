@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "children",
+  "info": {
+    "singularName": "child",
+    "pluralName": "children",
+    "displayName": "Child"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "dateOfBirth": {
+      "type": "string"
+    },
+    "tourist_visa": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tourist-visa.tourist-visa",
+      "inversedBy": "children"
+    }
+  }
+}
