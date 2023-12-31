@@ -40,19 +40,32 @@
       "type": "string"
     },
     "requiredDocument": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "address": {
       "type": "text"
     },
     "comment": {
+      "type": "text"
+    },
+    "Status": {
+      "type": "enumeration",
+      "enum": [
+        "New Request",
+        "Incomplete",
+        "Complete"
+      ],
+      "default": "New Request"
+    },
+    "Note_to_Customer": {
       "type": "text"
     }
   }
