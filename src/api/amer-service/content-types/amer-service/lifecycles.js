@@ -77,9 +77,9 @@ module.exports = {
   },
   async afterCreate(event) {
     const { result, params } = event;
-    console.log(result);
+
     const newData = params.data;
-    console.log(newData);
+
     try {
       let emailSubject, emailBody;
 
