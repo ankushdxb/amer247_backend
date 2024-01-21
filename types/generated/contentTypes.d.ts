@@ -659,6 +659,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    amer_services: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'manyToMany',
+      'api::amer-service.amer-service'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -736,9 +741,22 @@ export interface ApiAmerServiceAmerService extends Schema.CollectionType {
     requiredDocument: Attribute.Media;
     address: Attribute.Text;
     comment: Attribute.Text;
-    Status: Attribute.Enumeration<['New Request', 'Incomplete', 'Complete']> &
+    Status: Attribute.Enumeration<
+      [
+        'New Request',
+        'Verified',
+        'Sent to Typist',
+        'Payment Link Requested',
+        'Submitted'
+      ]
+    > &
       Attribute.DefaultTo<'New Request'>;
     Note_to_Customer: Attribute.Text;
+    users: Attribute.Relation<
+      'api::amer-service.amer-service',
+      'manyToMany',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

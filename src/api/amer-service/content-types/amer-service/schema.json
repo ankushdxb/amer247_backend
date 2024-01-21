@@ -60,13 +60,21 @@
       "type": "enumeration",
       "enum": [
         "New Request",
-        "Incomplete",
-        "Complete"
+        "Verified",
+        "Sent to Typist",
+        "Payment Link Requested",
+        "Submitted"
       ],
       "default": "New Request"
     },
     "Note_to_Customer": {
       "type": "text"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "amer_services"
     }
   }
 }
