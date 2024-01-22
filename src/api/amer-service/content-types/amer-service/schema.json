@@ -70,11 +70,10 @@
     "Note_to_Customer": {
       "type": "text"
     },
-    "users": {
+    "user": {
       "type": "relation",
-      "relation": "manyToMany",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "amer_services"
+      "relation": "oneToOne",
+      "target": "admin::user"
     }
   }
 }

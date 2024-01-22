@@ -65,12 +65,6 @@
       "target": "plugin::users-permissions.role",
       "inversedBy": "users",
       "configurable": false
-    },
-    "amer_services": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::amer-service.amer-service",
-      "mappedBy": "users"
     }
   }
 }
