@@ -60,6 +60,12 @@
       "relation": "oneToMany",
       "target": "api::child.child",
       "mappedBy": "tourist_visa"
+    },
+    "transactionId": {
+      "type": "string"
+    },
+    "transactionStatus": {
+      "type": "string"
     }
   }
 }
