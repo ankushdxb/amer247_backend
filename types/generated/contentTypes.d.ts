@@ -361,266 +361,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiAdultAdult extends Schema.CollectionType {
-  collectionName: 'adults';
-  info: {
-    singularName: 'adult';
-    pluralName: 'adults';
-    displayName: 'Adult';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String;
-    dateOfBirth: Attribute.String;
-    tourist_visa: Attribute.Relation<
-      'api::adult.adult',
-      'manyToOne',
-      'api::tourist-visa.tourist-visa'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::adult.adult',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::adult.adult',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiAmerServiceAmerService extends Schema.CollectionType {
-  collectionName: 'amer_services';
-  info: {
-    singularName: 'amer-service';
-    pluralName: 'amer-services';
-    displayName: 'amerService';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    serviceName: Attribute.String;
-    applicantName: Attribute.String;
-    sponsorName: Attribute.String;
-    sponsorEmail: Attribute.String;
-    sponsorMobileNo: Attribute.String;
-    whatAppNo: Attribute.String;
-    acount_IBAN_No: Attribute.String;
-    applicationPriority: Attribute.String;
-    insideOrOutside: Attribute.String;
-    requiredDocument: Attribute.Media;
-    address: Attribute.Text;
-    comment: Attribute.Text;
-    Status: Attribute.Enumeration<
-      [
-        'New Request',
-        'Verified',
-        'Sent to Typist',
-        'Payment Link Requested',
-        'Submitted'
-      ]
-    > &
-      Attribute.DefaultTo<'New Request'>;
-    Note_to_Customer: Attribute.Text;
-    user: Attribute.Relation<
-      'api::amer-service.amer-service',
-      'oneToOne',
-      'admin::user'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::amer-service.amer-service',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::amer-service.amer-service',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiChildChild extends Schema.CollectionType {
-  collectionName: 'children';
-  info: {
-    singularName: 'child';
-    pluralName: 'children';
-    displayName: 'Child';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String;
-    dateOfBirth: Attribute.String;
-    tourist_visa: Attribute.Relation<
-      'api::child.child',
-      'manyToOne',
-      'api::tourist-visa.tourist-visa'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::child.child',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::child.child',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiEmirateIdEmirateId extends Schema.CollectionType {
-  collectionName: 'emirate_ids';
-  info: {
-    singularName: 'emirate-id';
-    pluralName: 'emirate-ids';
-    displayName: 'emirateID';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    serviceName: Attribute.String;
-    applicantName: Attribute.String;
-    sponsorName: Attribute.String;
-    sponsorEmail: Attribute.Email;
-    sponsorMobileNo: Attribute.String;
-    whatappNo: Attribute.String;
-    emirates: Attribute.String;
-    P0_Box_No: Attribute.String;
-    UID_No: Attribute.String;
-    requiredDocment: Attribute.Media;
-    address: Attribute.Text;
-    comment: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::emirate-id.emirate-id',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::emirate-id.emirate-id',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiGoldenVisaGoldenVisa extends Schema.CollectionType {
-  collectionName: 'golden_visas';
-  info: {
-    singularName: 'golden-visa';
-    pluralName: 'golden-visas';
-    displayName: 'goldenVisa';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    serviceName: Attribute.String;
-    applicantName: Attribute.String;
-    email: Attribute.Media;
-    whatappNo: Attribute.String;
-    account_IBAN_No: Attribute.String;
-    applicationStatus: Attribute.String;
-    passport_of_applicant: Attribute.Media;
-    visa_Copy_of_Applicant: Attribute.Media;
-    emirates_id_copy_of_applicant: Attribute.Media;
-    photo_of_applicant: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::golden-visa.golden-visa',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::golden-visa.golden-visa',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiTouristVisaTouristVisa extends Schema.CollectionType {
-  collectionName: 'tourist_visas';
-  info: {
-    singularName: 'tourist-visa';
-    pluralName: 'tourist-visas';
-    displayName: 'TouristVisa';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    applicantName: Attribute.String;
-    email: Attribute.String;
-    mobileNo: Attribute.String;
-    nationality: Attribute.String;
-    dateOfTravel: Attribute.String;
-    passportCopies: Attribute.Media;
-    photosOfPassenger: Attribute.Media;
-    adults: Attribute.Relation<
-      'api::tourist-visa.tourist-visa',
-      'oneToMany',
-      'api::adult.adult'
-    >;
-    children: Attribute.Relation<
-      'api::tourist-visa.tourist-visa',
-      'oneToMany',
-      'api::child.child'
-    >;
-    transactionId: Attribute.String;
-    transactionStatus: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::tourist-visa.tourist-visa',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::tourist-visa.tourist-visa',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -936,6 +676,266 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAdultAdult extends Schema.CollectionType {
+  collectionName: 'adults';
+  info: {
+    singularName: 'adult';
+    pluralName: 'adults';
+    displayName: 'Adult';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    dateOfBirth: Attribute.String;
+    tourist_visa: Attribute.Relation<
+      'api::adult.adult',
+      'manyToOne',
+      'api::tourist-visa.tourist-visa'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::adult.adult',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::adult.adult',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAmerServiceAmerService extends Schema.CollectionType {
+  collectionName: 'amer_services';
+  info: {
+    singularName: 'amer-service';
+    pluralName: 'amer-services';
+    displayName: 'amerService';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    serviceName: Attribute.String;
+    applicantName: Attribute.String;
+    sponsorName: Attribute.String;
+    sponsorEmail: Attribute.String;
+    sponsorMobileNo: Attribute.String;
+    whatAppNo: Attribute.String;
+    acount_IBAN_No: Attribute.String;
+    applicationPriority: Attribute.String;
+    insideOrOutside: Attribute.String;
+    requiredDocument: Attribute.Media;
+    address: Attribute.Text;
+    comment: Attribute.Text;
+    Status: Attribute.Enumeration<
+      [
+        'New Request',
+        'Verified',
+        'Sent to Typist',
+        'Payment Link Requested',
+        'Submitted'
+      ]
+    > &
+      Attribute.DefaultTo<'New Request'>;
+    Note_to_Customer: Attribute.Text;
+    user: Attribute.Relation<
+      'api::amer-service.amer-service',
+      'oneToOne',
+      'admin::user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::amer-service.amer-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::amer-service.amer-service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiChildChild extends Schema.CollectionType {
+  collectionName: 'children';
+  info: {
+    singularName: 'child';
+    pluralName: 'children';
+    displayName: 'Child';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    dateOfBirth: Attribute.String;
+    tourist_visa: Attribute.Relation<
+      'api::child.child',
+      'manyToOne',
+      'api::tourist-visa.tourist-visa'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::child.child',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::child.child',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEmirateIdEmirateId extends Schema.CollectionType {
+  collectionName: 'emirate_ids';
+  info: {
+    singularName: 'emirate-id';
+    pluralName: 'emirate-ids';
+    displayName: 'emirateID';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    serviceName: Attribute.String;
+    applicantName: Attribute.String;
+    sponsorName: Attribute.String;
+    sponsorEmail: Attribute.Email;
+    sponsorMobileNo: Attribute.String;
+    whatappNo: Attribute.String;
+    emirates: Attribute.String;
+    P0_Box_No: Attribute.String;
+    UID_No: Attribute.String;
+    requiredDocment: Attribute.Media;
+    address: Attribute.Text;
+    comment: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::emirate-id.emirate-id',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::emirate-id.emirate-id',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiGoldenVisaGoldenVisa extends Schema.CollectionType {
+  collectionName: 'golden_visas';
+  info: {
+    singularName: 'golden-visa';
+    pluralName: 'golden-visas';
+    displayName: 'goldenVisa';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    serviceName: Attribute.String;
+    applicantName: Attribute.String;
+    email: Attribute.Media;
+    whatappNo: Attribute.String;
+    account_IBAN_No: Attribute.String;
+    applicationStatus: Attribute.String;
+    passport_of_applicant: Attribute.Media;
+    visa_Copy_of_Applicant: Attribute.Media;
+    emirates_id_copy_of_applicant: Attribute.Media;
+    photo_of_applicant: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::golden-visa.golden-visa',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::golden-visa.golden-visa',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTouristVisaTouristVisa extends Schema.CollectionType {
+  collectionName: 'tourist_visas';
+  info: {
+    singularName: 'tourist-visa';
+    pluralName: 'tourist-visas';
+    displayName: 'TouristVisa';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    applicantName: Attribute.String;
+    email: Attribute.String;
+    mobileNo: Attribute.String;
+    nationality: Attribute.String;
+    dateOfTravel: Attribute.String;
+    passportCopies: Attribute.Media;
+    photosOfPassenger: Attribute.Media;
+    adults: Attribute.Relation<
+      'api::tourist-visa.tourist-visa',
+      'oneToMany',
+      'api::adult.adult'
+    >;
+    children: Attribute.Relation<
+      'api::tourist-visa.tourist-visa',
+      'oneToMany',
+      'api::child.child'
+    >;
+    transactionId: Attribute.String;
+    transactionStatus: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::tourist-visa.tourist-visa',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::tourist-visa.tourist-visa',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Shared {
     export interface ContentTypes {
@@ -946,18 +946,18 @@ declare module '@strapi/strapi' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::adult.adult': ApiAdultAdult;
-      'api::amer-service.amer-service': ApiAmerServiceAmerService;
-      'api::child.child': ApiChildChild;
-      'api::emirate-id.emirate-id': ApiEmirateIdEmirateId;
-      'api::golden-visa.golden-visa': ApiGoldenVisaGoldenVisa;
-      'api::tourist-visa.tourist-visa': ApiTouristVisaTouristVisa;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::adult.adult': ApiAdultAdult;
+      'api::amer-service.amer-service': ApiAmerServiceAmerService;
+      'api::child.child': ApiChildChild;
+      'api::emirate-id.emirate-id': ApiEmirateIdEmirateId;
+      'api::golden-visa.golden-visa': ApiGoldenVisaGoldenVisa;
+      'api::tourist-visa.tourist-visa': ApiTouristVisaTouristVisa;
     }
   }
 }
