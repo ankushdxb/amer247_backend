@@ -812,6 +812,7 @@ export interface ApiEmirateIdEmirateId extends Schema.CollectionType {
     singularName: 'emirate-id';
     pluralName: 'emirate-ids';
     displayName: 'emirateID';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -829,6 +830,21 @@ export interface ApiEmirateIdEmirateId extends Schema.CollectionType {
     requiredDocment: Attribute.Media;
     address: Attribute.Text;
     comment: Attribute.String;
+    Status: Attribute.Enumeration<
+      [
+        'New Request',
+        'Verified',
+        'Sent to Typist',
+        'Payment Link Requested',
+        'Submitted'
+      ]
+    >;
+    Note_to_Customer: Attribute.Text;
+    user: Attribute.Relation<
+      'api::emirate-id.emirate-id',
+      'oneToOne',
+      'admin::user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -869,6 +885,21 @@ export interface ApiGoldenVisaGoldenVisa extends Schema.CollectionType {
     visa_Copy_of_Applicant: Attribute.Media;
     emirates_id_copy_of_applicant: Attribute.Media;
     photo_of_applicant: Attribute.Media;
+    user: Attribute.Relation<
+      'api::golden-visa.golden-visa',
+      'oneToOne',
+      'admin::user'
+    >;
+    Note_to_Customer: Attribute.Text;
+    Status: Attribute.Enumeration<
+      [
+        'New Request',
+        'Verified',
+        'Sent to Typist',
+        'Payment Link Requested',
+        'Submitted'
+      ]
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -918,6 +949,21 @@ export interface ApiTouristVisaTouristVisa extends Schema.CollectionType {
     >;
     transactionId: Attribute.String;
     transactionStatus: Attribute.String;
+    user: Attribute.Relation<
+      'api::tourist-visa.tourist-visa',
+      'oneToOne',
+      'admin::user'
+    >;
+    Note_to_Customer: Attribute.Text;
+    Status: Attribute.Enumeration<
+      [
+        'New Request',
+        'Verified',
+        'Sent to Typist',
+        'Payment Link Requested',
+        'Submitted'
+      ]
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

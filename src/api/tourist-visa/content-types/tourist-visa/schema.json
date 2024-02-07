@@ -66,6 +66,24 @@
     },
     "transactionStatus": {
       "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "Note_to_Customer": {
+      "type": "text"
+    },
+    "Status": {
+      "type": "enumeration",
+      "enum": [
+        "New Request",
+        "Verified",
+        "Sent to Typist",
+        "Payment Link Requested",
+        "Submitted"
+      ]
     }
   }
 }
