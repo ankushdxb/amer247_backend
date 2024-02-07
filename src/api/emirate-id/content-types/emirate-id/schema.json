@@ -4,7 +4,8 @@
   "info": {
     "singularName": "emirate-id",
     "pluralName": "emirate-ids",
-    "displayName": "emirateID"
+    "displayName": "emirateID",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -39,20 +40,39 @@
       "type": "string"
     },
     "requiredDocment": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "address": {
       "type": "text"
     },
     "comment": {
       "type": "string"
+    },
+    "Status": {
+      "type": "enumeration",
+      "enum": [
+        "New Request",
+        "Verified",
+        "Sent to Typist",
+        "Payment Link Requested",
+        "Submitted"
+      ]
+    },
+    "Note_to_Customer": {
+      "type": "text"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
     }
   }
 }
