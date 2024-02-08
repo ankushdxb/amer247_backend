@@ -752,6 +752,8 @@ export interface ApiAmerServiceAmerService extends Schema.CollectionType {
       'oneToOne',
       'admin::user'
     >;
+    transactionId: Attribute.String;
+    transactionStatus: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -845,6 +847,8 @@ export interface ApiEmirateIdEmirateId extends Schema.CollectionType {
       'oneToOne',
       'admin::user'
     >;
+    transactionStatus: Attribute.String;
+    transactionId: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -900,6 +904,8 @@ export interface ApiGoldenVisaGoldenVisa extends Schema.CollectionType {
         'Submitted'
       ]
     >;
+    transactionId: Attribute.String;
+    transactionStatus: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

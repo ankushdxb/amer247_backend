@@ -6,7 +6,7 @@ module.exports = {
     // Connected to "Save" button in admin panel
     const { params } = event;
     const newData = params.data;
-    console.log("change", newData);
+
     // Check if newData is present
     if (!newData) {
       throw new Error("New data is not provided.");
@@ -14,7 +14,7 @@ module.exports = {
 
     // Fetch the previous state of the record
     const previousState = await strapi.entityService.findOne(
-      "api::emirate-id.emirate-id",
+      "api::tourist-visa.tourist-visa",
       params.where.id
     );
 
@@ -29,7 +29,7 @@ module.exports = {
       // Function to send email
       const sendEmail = async (subject, body) => {
         await strapi.plugins["email"].services.email.send({
-          to: newData.sponsorEmail,
+          to: newData.email || previousState.email,
           from: process.env.SENDER_EMAIL || "umarasif737@gmail.com",
           subject,
           html: body,
@@ -77,9 +77,8 @@ module.exports = {
   },
   async afterCreate(event) {
     const { result, params } = event;
-    const newData = params.data;
 
-    console.log(newData);
+    const newData = params.data;
 
     try {
       let emailSubject, emailBody;
@@ -87,7 +86,7 @@ module.exports = {
       // Function to send email
       const sendEmail = async (subject, body) => {
         await strapi.plugins["email"].services.email.send({
-          to: newData.sponsorEmail,
+          to: newData.email,
           from: process.env.SENDER_EMAIL || "umarasif737@gmail.com",
           subject,
           html: body,

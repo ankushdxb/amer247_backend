@@ -74,6 +74,12 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "admin::user"
+    },
+    "transactionId": {
+      "type": "string"
+    },
+    "transactionStatus": {
+      "type": "string"
     }
   }
 }
