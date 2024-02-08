@@ -79,6 +79,9 @@
     },
     "transactionId": {
       "type": "string"
+    },
+    "formLink": {
+      "type": "text"
     }
   }
 }

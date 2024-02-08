@@ -22,14 +22,13 @@ module.exports = {
     if (!previousState) {
       throw new Error("Previous state of the record not found.");
     }
-
     try {
       let emailSubject, emailBody;
 
       // Function to send email
       const sendEmail = async (subject, body) => {
         await strapi.plugins["email"].services.email.send({
-          to: newData.sponsorEmail,
+          to: newData.email,
           from: process.env.SENDER_EMAIL || "umarasif737@gmail.com",
           subject,
           html: body,
@@ -86,7 +85,7 @@ module.exports = {
       // Function to send email
       const sendEmail = async (subject, body) => {
         await strapi.plugins["email"].services.email.send({
-          to: newData.sponsorEmail,
+          to: newData.email,
           from: process.env.SENDER_EMAIL || "umarasif737@gmail.com",
           subject,
           html: body,

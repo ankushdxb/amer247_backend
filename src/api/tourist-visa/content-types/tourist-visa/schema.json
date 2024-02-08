@@ -84,6 +84,9 @@
         "Payment Link Requested",
         "Submitted"
       ]
+    },
+    "formLink": {
+      "type": "text"
     }
   }
 }
