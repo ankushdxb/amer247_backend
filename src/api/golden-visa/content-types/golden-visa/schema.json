@@ -18,17 +18,6 @@
     "applicantName": {
       "type": "string"
     },
-    "email": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "whatappNo": {
       "type": "string"
     },
@@ -38,7 +27,7 @@
     "applicationStatus": {
       "type": "string"
     },
-    "passport_of_applicant": {
+    "passportApplicant": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -49,7 +38,7 @@
         "audios"
       ]
     },
-    "visa_Copy_of_Applicant": {
+    "visaCopyOfApplicant": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -60,7 +49,7 @@
         "audios"
       ]
     },
-    "emirates_id_copy_of_applicant": {
+    "emirateIdCopyOfApplicant": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -71,7 +60,7 @@
         "audios"
       ]
     },
-    "photo_of_applicant": {
+    "onePhotoOfApplicant": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -104,6 +93,12 @@
       "type": "string"
     },
     "transactionStatus": {
+      "type": "string"
+    },
+    "formLink": {
+      "type": "text"
+    },
+    "email": {
       "type": "string"
     }
   }

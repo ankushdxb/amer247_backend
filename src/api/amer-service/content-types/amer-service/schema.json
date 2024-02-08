@@ -80,6 +80,9 @@
     },
     "transactionStatus": {
       "type": "string"
+    },
+    "formLink": {
+      "type": "text"
     }
   }
 }

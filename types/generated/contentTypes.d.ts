@@ -754,6 +754,7 @@ export interface ApiAmerServiceAmerService extends Schema.CollectionType {
     >;
     transactionId: Attribute.String;
     transactionStatus: Attribute.String;
+    formLink: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -849,6 +850,7 @@ export interface ApiEmirateIdEmirateId extends Schema.CollectionType {
     >;
     transactionStatus: Attribute.String;
     transactionId: Attribute.String;
+    formLink: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -881,14 +883,13 @@ export interface ApiGoldenVisaGoldenVisa extends Schema.CollectionType {
   attributes: {
     serviceName: Attribute.String;
     applicantName: Attribute.String;
-    email: Attribute.Media;
     whatappNo: Attribute.String;
     account_IBAN_No: Attribute.String;
     applicationStatus: Attribute.String;
-    passport_of_applicant: Attribute.Media;
-    visa_Copy_of_Applicant: Attribute.Media;
-    emirates_id_copy_of_applicant: Attribute.Media;
-    photo_of_applicant: Attribute.Media;
+    passportApplicant: Attribute.Media;
+    visaCopyOfApplicant: Attribute.Media;
+    emirateIdCopyOfApplicant: Attribute.Media;
+    onePhotoOfApplicant: Attribute.Media;
     user: Attribute.Relation<
       'api::golden-visa.golden-visa',
       'oneToOne',
@@ -906,6 +907,8 @@ export interface ApiGoldenVisaGoldenVisa extends Schema.CollectionType {
     >;
     transactionId: Attribute.String;
     transactionStatus: Attribute.String;
+    formLink: Attribute.Text;
+    email: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -970,6 +973,7 @@ export interface ApiTouristVisaTouristVisa extends Schema.CollectionType {
         'Submitted'
       ]
     >;
+    formLink: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
