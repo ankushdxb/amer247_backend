@@ -75,35 +75,4 @@ module.exports = {
       // Handle the error appropriately
     }
   },
-  async afterCreate(event) {
-    const { result, params } = event;
-    const newData = params.data;
-
-    console.log(newData);
-
-    try {
-      let emailSubject, emailBody;
-
-      // Function to send email
-      const sendEmail = async (subject, body) => {
-        await strapi.plugins["email"].services.email.send({
-          to: newData.sponsorEmail,
-          from: process.env.SENDER_EMAIL || "umarasif737@gmail.com",
-          subject,
-          html: body,
-        });
-      };
-
-      // Check if the status has changed
-
-      emailSubject = "New Request Received";
-      emailBody = `<body><p>Hello,</p><p>We have received your new request.`;
-
-      await sendEmail(emailSubject, emailBody);
-    } catch (err) {
-      console.error("Error in beforeUpdate:", err);
-      // Handle the error appropriately
-    }
-    // do something to the result;
-  },
 };
