@@ -30,7 +30,7 @@
     "whatAppNo": {
       "type": "string"
     },
-    "acount_IBAN_No": {
+    "account_IBAN_No": {
       "type": "string"
     },
     "applicationPriority": {
@@ -82,7 +82,10 @@
       "type": "string"
     },
     "formLink": {
-      "type": "text"
+      "type": "string"
+    },
+    "referenceID": {
+      "type": "string"
     }
   }
 }

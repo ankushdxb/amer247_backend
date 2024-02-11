@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "emirate_ids",
+  "collectionName": "medical_tests",
   "info": {
-    "singularName": "emirate-id",
-    "pluralName": "emirate-ids",
-    "displayName": "emirateID",
+    "singularName": "medical-test",
+    "pluralName": "medical-tests",
+    "displayName": "MedicalTest",
     "description": ""
   },
   "options": {
@@ -22,39 +22,41 @@
       "type": "string"
     },
     "sponsorEmail": {
-      "type": "email"
+      "type": "string"
     },
     "sponsorMobileNo": {
       "type": "string"
     },
-    "whatappNo": {
+    "whatAppNo": {
       "type": "string"
     },
-    "emirates": {
+    "account_IBAN_No": {
       "type": "string"
     },
-    "P0_Box_No": {
+    "applicationPriority": {
       "type": "string"
     },
-    "UID_No": {
+    "applicationType": {
       "type": "string"
     },
-    "requiredDocment": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
+    "address": {
+      "type": "string"
+    },
+    "requiredDocument": {
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
-    },
-    "address": {
-      "type": "text"
+      ],
+      "type": "media",
+      "multiple": true
     },
     "comment": {
       "type": "string"
+    },
+    "Note_to_Customer": {
+      "type": "text"
     },
     "Status": {
       "type": "enumeration",
@@ -66,21 +68,21 @@
         "Submitted"
       ]
     },
-    "Note_to_Customer": {
-      "type": "text"
-    },
     "user": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "admin::user"
     },
-    "transactionStatus": {
-      "type": "string"
-    },
     "transactionId": {
       "type": "string"
     },
+    "transactionStatus": {
+      "type": "string"
+    },
     "formLink": {
+      "type": "string"
+    },
+    "referenceID": {
       "type": "string"
     }
   }

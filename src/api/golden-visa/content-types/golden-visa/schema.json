@@ -18,7 +18,7 @@
     "applicantName": {
       "type": "string"
     },
-    "whatappNo": {
+    "mobileNo": {
       "type": "string"
     },
     "account_IBAN_No": {
@@ -99,6 +99,9 @@
       "type": "text"
     },
     "email": {
+      "type": "string"
+    },
+    "referenceID": {
       "type": "string"
     }
   }
