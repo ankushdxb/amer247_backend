@@ -43,10 +43,6 @@ module.exports = {
             : "";
 
         switch (newData.Status) {
-          case "New Request":
-            emailSubject = "New Request Received";
-            emailBody = `<body><p>Hello,</p><p>We have received your new request.</p>${note}</body>`;
-            break;
           case "Verified":
             emailSubject = "Request Verified";
             emailBody = `<body><p>Hello,</p><p>Your request has been verified.</p>${note}</body>`;
