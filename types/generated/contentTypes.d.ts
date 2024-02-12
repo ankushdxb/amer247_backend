@@ -852,6 +852,7 @@ export interface ApiEmirateIdEmirateId extends Schema.CollectionType {
     transactionStatus: Attribute.String;
     transactionId: Attribute.String;
     formLink: Attribute.String;
+    referenceID: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1037,6 +1038,8 @@ export interface ApiTouristVisaTouristVisa extends Schema.CollectionType {
       ]
     >;
     formLink: Attribute.Text;
+    serviceName: Attribute.String;
+    referenceID: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

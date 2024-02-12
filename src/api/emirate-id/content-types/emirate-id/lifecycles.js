@@ -40,25 +40,67 @@ module.exports = {
       if (previousState.Status !== newData.Status) {
         const note =
           newData.Note_to_Customer && newData.Note_to_Customer.trim() !== ""
-            ? `<p>Note: ${newData.Note_to_Customer}</p>`
+            ? `<p> ${newData.Note_to_Customer} </p>`
             : "";
 
         switch (newData.Status) {
           case "Verified":
-            emailSubject = "Request Verified";
-            emailBody = `<body><p>Hello,</p><p>Your request has been verified.</p>${note}</body>`;
+            emailSubject = `Request Verified to Typist for ${previousState.serviceName} - ${previousState.referenceID}`;
+            emailBody = `
+      <html>
+        <body>
+          <p>Dear ${previousState.applicantName},</p>
+          <p>I hope this email finds you well. We're writing to inform you that your recent request has been successfully verified. We understand the importance of timely and accurate processing, and we're pleased to confirm that everything is in order.</p>
+          <p>Your satisfaction is our top priority, and we're committed to providing you with excellent service every step of the way. If you have any questions or need further assistance, please don't hesitate to reach out to us. Our dedicated 24 hours support team is here to help through WhatsApp +971581257700 and ensure that your experience with us remains smooth and efficient.</p>
+          <p>Once again, thank you for choosing Amer247. We appreciate your trust and confidence in our services.</p>
+          <p>Best regards,<br>Amer247</p>
+        </body>
+      </html>
+    `;
             break;
           case "Sent to Typist":
-            emailSubject = "Request in Progress";
-            emailBody = `<body><p>Hello,</p><p>Your request is currently being processed by our typist.</p>${note}</body>`;
+            emailSubject = `Request Sent to Typist for ${previousState.serviceName} - ${previousState.referenceID}`;
+            emailBody = `
+      <html>
+        <body>
+          <p>Dear ${previousState.applicantName},</p>
+          <p>I hope this email finds you well. We're writing to inform you that your recent request is currently being processed by our typist. We understand the importance of timely and accurate processing, and we're pleased to confirm that everything is in order.</p>
+          <p><b>Note:</b><br>${note}</p>
+          <p>Your satisfaction is our top priority, and we're committed to providing you with excellent service every step of the way. If you have any questions or need further assistance, please don't hesitate to reach out to us. Our dedicated 24 hours support team is here to help through WhatsApp +971581257700 and ensure that your experience with us remains smooth and efficient.</p>
+          <p>Once again, thank you for choosing Amer247. We appreciate your trust and confidence in our services.</p>
+          <p>Best regards,<br>Amer247</p>
+        </body>
+      </html>
+    `;
             break;
           case "Payment Link Requested":
-            emailSubject = "Payment Link Requested";
-            emailBody = `<body><p>Hello,</p><p>Please proceed with the payment using the link provided.</p>${note}</body>`;
+            emailSubject = `Payment Link Requested for ${previousState.serviceName} - ${previousState.referenceID}`;
+            emailBody = `
+      <html>
+        <body>
+          <p>Dear ${previousState.applicantName},</p>
+          <p>I hope this email finds you well. We're writing to inform you that please proceed with the payment using the link provided. We understand the importance of timely and accurate processing, and we're pleased to confirm that everything is in order.</p>
+          <p><b>Payment Link:</b><br>${note}</p>
+          <p>Your satisfaction is our top priority, and we're committed to providing you with excellent service every step of the way. If you have any questions or need further assistance, please don't hesitate to reach out to us. Our dedicated 24 hours support team is here to help through WhatsApp +971581257700 and ensure that your experience with us remains smooth and efficient.</p>
+          <p>Once again, thank you for choosing Amer247. We appreciate your trust and confidence in our services.</p>
+          <p>Best regards,<br>Amer247</p>
+        </body>
+      </html>
+    `;
             break;
           case "Submitted":
-            emailSubject = "Request Submitted";
-            emailBody = `<body><p>Hello,</p><p>Your request has been successfully submitted and is under review.</p>${note}</body>`;
+            emailSubject = `Request Approved for ${previousState.serviceName} - ${previousState.referenceID}`;
+            emailBody = `
+      <html>
+        <body>
+          <p>Dear ${previousState.applicantName},</p>
+          <p>I hope this email finds you well. We're writing to inform you that your recent request has been successfully verified. We understand the importance of timely and accurate processing, and we're pleased to confirm that everything is in order.</p>
+          <p>Your satisfaction is our top priority, and we're committed to providing you with excellent service every step of the way. If you have any questions or need further assistance, please don't hesitate to reach out to us. Our dedicated 24 hours support team is here to help through WhatsApp +971581257700 and ensure that your experience with us remains smooth and efficient.</p>
+          <p>Once again, thank you for choosing Amer247. We appreciate your trust and confidence in our services.</p>
+          <p>Best regards,<br>Amer247</p>
+        </body>
+      </html>
+    `;
             break;
           default:
             // If the status is not recognized, no email is sent
