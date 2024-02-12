@@ -14,7 +14,7 @@ module.exports = {
 
     // Fetch the previous state of the record
     const previousState = await strapi.entityService.findOne(
-      "api::tourist-visa.tourist-visa",
+      "api::medical-test.medical-test",
       params.where.id
     );
 
@@ -29,13 +29,14 @@ module.exports = {
       // Function to send email
       const sendEmail = async (subject, body) => {
         await strapi.plugins["email"].services.email.send({
-          to: newData.email || previousState.email,
+          to: newData.sponsorEmail,
           from: process.env.SENDER_EMAIL || "umarasif737@gmail.com",
           subject,
           html: body,
         });
       };
 
+      // Check if the status has changed
       if (previousState.Status !== newData.Status) {
         const note =
           newData.Note_to_Customer && newData.Note_to_Customer.trim() !== ""

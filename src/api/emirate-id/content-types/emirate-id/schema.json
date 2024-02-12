@@ -82,6 +82,9 @@
     },
     "formLink": {
       "type": "string"
+    },
+    "referenceID": {
+      "type": "string"
     }
   }
 }

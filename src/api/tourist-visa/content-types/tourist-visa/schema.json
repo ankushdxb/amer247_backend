@@ -87,6 +87,12 @@
     },
     "formLink": {
       "type": "text"
+    },
+    "serviceName": {
+      "type": "string"
+    },
+    "referenceID": {
+      "type": "string"
     }
   }
 }
