@@ -29,7 +29,7 @@ module.exports = {
       const sendEmail = async (subject, body) => {
         await strapi.plugins["email"].services.email.send({
           to: newData.email,
-          from: process.env.SENDER_EMAIL || "umarasif737@gmail.com",
+          from: "noreply@amer247.com",
           subject,
           html: body,
         });
