@@ -887,7 +887,6 @@ export interface ApiGoldenVisaGoldenVisa extends Schema.CollectionType {
     applicantName: Attribute.String;
     mobileNo: Attribute.String;
     account_IBAN_No: Attribute.String;
-    applicationStatus: Attribute.String;
     passportApplicant: Attribute.Media;
     visaCopyOfApplicant: Attribute.Media;
     emirateIdCopyOfApplicant: Attribute.Media;

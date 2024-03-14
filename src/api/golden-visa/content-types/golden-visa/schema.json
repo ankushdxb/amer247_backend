@@ -24,9 +24,6 @@
     "account_IBAN_No": {
       "type": "string"
     },
-    "applicationStatus": {
-      "type": "string"
-    },
     "passportApplicant": {
       "type": "media",
       "multiple": true,
