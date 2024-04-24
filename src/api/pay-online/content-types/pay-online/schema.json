@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pay_onlines",
+  "info": {
+    "singularName": "pay-online",
+    "pluralName": "pay-onlines",
+    "displayName": "PayOnline",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "string"
+    },
+    "reference": {
+      "type": "string"
+    },
+    "mobile": {
+      "type": "string"
+    },
+    "comments": {
+      "type": "text"
+    },
+    "email": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    }
+  }
+}
