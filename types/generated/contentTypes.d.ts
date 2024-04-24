@@ -1008,7 +1008,8 @@ export interface ApiPayOnlinePayOnline extends Schema.CollectionType {
     mobile: Attribute.String;
     comments: Attribute.Text;
     email: Attribute.String;
-    status: Attribute.String;
+    transactionStatus: Attribute.String;
+    transactionId: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
