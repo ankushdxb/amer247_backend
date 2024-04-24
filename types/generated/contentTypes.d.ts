@@ -990,6 +990,43 @@ export interface ApiMedicalTestMedicalTest extends Schema.CollectionType {
   };
 }
 
+export interface ApiPayOnlinePayOnline extends Schema.CollectionType {
+  collectionName: 'pay_onlines';
+  info: {
+    singularName: 'pay-online';
+    pluralName: 'pay-onlines';
+    displayName: 'PayOnline';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    amount: Attribute.String;
+    reference: Attribute.String;
+    mobile: Attribute.String;
+    comments: Attribute.Text;
+    email: Attribute.String;
+    status: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::pay-online.pay-online',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::pay-online.pay-online',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTouristVisaTouristVisa extends Schema.CollectionType {
   collectionName: 'tourist_visas';
   info: {
@@ -1079,6 +1116,7 @@ declare module '@strapi/strapi' {
       'api::emirate-id.emirate-id': ApiEmirateIdEmirateId;
       'api::golden-visa.golden-visa': ApiGoldenVisaGoldenVisa;
       'api::medical-test.medical-test': ApiMedicalTestMedicalTest;
+      'api::pay-online.pay-online': ApiPayOnlinePayOnline;
       'api::tourist-visa.tourist-visa': ApiTouristVisaTouristVisa;
     }
   }
