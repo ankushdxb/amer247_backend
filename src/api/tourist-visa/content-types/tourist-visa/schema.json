@@ -31,23 +31,13 @@
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "allowedTypes": ["images", "files", "videos", "audios"]
     },
     "photosOfPassenger": {
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "allowedTypes": ["images", "files", "videos", "audios"]
     },
     "adults": {
       "type": "relation",
@@ -64,6 +54,10 @@
     "transactionId": {
       "type": "string"
     },
+    "orderNo": {
+      "type": "string"
+    },
+
     "transactionStatus": {
       "type": "string"
     },
