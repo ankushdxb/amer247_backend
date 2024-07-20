@@ -33,6 +33,10 @@
     "transactionStatus": {
       "type": "string"
     },
+    "orderNo": {
+      "type": "string"
+    },
+
     "transactionId": {
       "type": "string"
     }
