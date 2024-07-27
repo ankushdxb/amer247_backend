@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "insurances",
+  "info": {
+    "singularName": "insurance",
+    "pluralName": "insurances",
+    "displayName": "Insurance",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "serviceName": {
+      "type": "string"
+    },
+    "applicantName": {
+      "type": "string"
+    },
+    "sponsorName": {
+      "type": "string"
+    },
+    "sponsorEmail": {
+      "type": "string"
+    },
+    "sponsorMobileNo": {
+      "type": "string"
+    },
+    "whatAppNo": {
+      "type": "string"
+    },
+    "account_IBAN_No": {
+      "type": "string"
+    },
+    "applicationPriority": {
+      "type": "string"
+    },
+    "applicationType": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "requiredDocument": {
+      "allowedTypes": ["images", "files", "videos", "audios"],
+      "type": "media",
+      "multiple": true
+    },
+    "comment": {
+      "type": "string"
+    },
+    "Note_to_Customer": {
+      "type": "text"
+    },
+    "Status": {
+      "type": "enumeration",
+      "enum": [
+        "New Request",
+        "Verified",
+        "Sent to Typist",
+        "Payment Link Requested",
+        "Submitted"
+      ]
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    },
+    "transactionId": {
+      "type": "string"
+    },
+    "transactionStatus": {
+      "type": "string"
+    },
+    "formLink": {
+      "type": "string"
+    },
+    "referenceID": {
+      "type": "string"
+    }
+  }
+}
